@@ -1,0 +1,57 @@
+<div class="container">
+
+    <h1> prueba potter</h1>
+
+    <div class="card-columns">
+
+        <div class="card" *ngFor=" let estudiante of estudiantes;
+       let par=even;
+        let impar=odd;
+        let i = index ">
+
+            <img [src]="estudiante.image" class="card-img-top" alt="..."
+                style="width: 200px; display: block; margin: auto">
+            <button *ngIf="estudiante.image.length==0" class="btn btn-dark" (click)="agregarImg(i)">add img</button>
+            <div class="card-body" [ngClass]="{'bg-success':par, 'bg-primary':impar }">
+
+
+                <h3 class="card-title">nombre:{{estudiante.name}}
+                    <button class="btn" (click)="editar(i,'name')">
+                        <span class="material-symbols-outlined">edit</span>
+                    </button>
+                </h3>
+                <p class="card-text"><b>tipo:{{estudiante.species}}
+                    <button class="btn" (click)="editar(i,'type')">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </b></p>
+                <p class="card-text"><b>genero:{{estudiante.gender}}
+                    <button class="btn" (click)="editar(i,'gender')">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </b></p>
+                <p class="card-text"><b>casa:{{estudiante.house}}
+                    <button class="btn" (click)="editar(i,'house')">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </b></p>
+                <p class="card-text"><b>fecha de nacimiento:{{estudiante.yearOfBirth}}
+                    <button class="btn" (click)="editar(i,'year')">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </b></p>
+                <p class="card-text"><b>Patronus:{{estudiante.patronus}}
+                    <button class="btn" (click)="editar(i,'patronus')">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </b></p>
+                <p class="card-text"><b>Esta vivo:{{estudiante.alive}}
+                    <button class="btn" (click)="editar(i,'alive')">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </b></p>
+            </div>
+            <input type="hidden" [value]="i">
+        </div>
+    </div>
+</div>

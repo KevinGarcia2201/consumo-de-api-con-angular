@@ -20,6 +20,11 @@
                         <span class="material-symbols-outlined">edit</span>
                     </button>
                 </h3>
+                <p class="card-text"><b>tipo:{{estudiante.id}}
+                    <button class="btn" (click)="editar(i,'id')">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </b></p>
                 <p class="card-text"><b>tipo:{{estudiante.species}}
                     <button class="btn" (click)="editar(i,'type')">
                             <span class="material-symbols-outlined">edit</span>
@@ -52,6 +57,7 @@
                     </b></p>
             </div>
             <input type="hidden" [value]="i">
+            <BUtton class="btn btn-danger" (click)="eliminar(estudiante.id)"> Eliminar </BUtton>
         </div>
     </div>
 </div>

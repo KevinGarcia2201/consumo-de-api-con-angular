@@ -2699,7 +2699,15 @@ export class EstudiantesComponent implements OnInit {
         this.estudiantes[x].name=dato;
         break;
 
-      }
+      }case"id":{
+
+        let dato= prompt("ingrese el tipo");
+        this.estudiantes[x].id=dato;
+        break;
+
+ }
+
+      
       case"type":{
 
         let dato= prompt("ingrese el tipo");
@@ -2747,6 +2755,12 @@ export class EstudiantesComponent implements OnInit {
 
     }
    
+  }
+
+  eliminar(id:string){
+
+    this.estudiantes=this.estudiantes.filter((item:{id:string})=>item.id!=id);
+
   }
   
 }
